@@ -10,6 +10,7 @@ function auth(app) {
     const authController = new AuthController(authService);
 
     app.post("/auth/register", authController.register);
+    app.post("/auth/login", authController.login);
 }
 
 module.exports = auth;

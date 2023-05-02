@@ -21,6 +21,20 @@ class AuthRepository {
             throw e;
         }
     }
+    async findUserByEmail(email) {
+        try {
+            return await User.findOne({ email: email });
+        } catch (e) {
+            throw e;
+        }
+    }
+    async findRefreshTokenByUserId(userId) {
+        try {
+            return await RefreshToken.findOne({ user: userId });
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = AuthRepository;

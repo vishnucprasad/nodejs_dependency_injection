@@ -54,10 +54,22 @@ class ConflictError extends AppError {
     }
 }
 
+class UnauthorizedError extends AppError {
+    constructor(
+        description,
+        name = "Unauthorized error",
+        statusCode = STATUS_CODES.UNAUTHORIZED,
+        isOperational = true
+    ) {
+        super(description, name, statusCode, isOperational);
+    }
+}
+
 module.exports = {
     AppError,
     NotFoundError,
     InternalServerError,
     ConflictError,
+    UnauthorizedError,
     STATUS_CODES,
 };

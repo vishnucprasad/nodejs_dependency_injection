@@ -10,6 +10,7 @@ class AuthController {
     constructor(service) {
         this.service = service;
         this.register = this.register.bind(this);
+        this.login = this.login.bind(this);
     }
     async register(req, res, next) {
         try {
@@ -28,6 +29,22 @@ class AuthController {
                 );
             }
 
+            next(new InternalServerError(e.message));
+        }
+    }
+    async login(req, res, next) {
+        try {
+            const { email, password } = req.body;
+
+            const { accessToken, refreshToken, user } =
+                await this.service.login(email, password);
+
+            res.status(STATUS_CODES.OK).json({
+                accessToken,
+                refreshToken,
+                user,
+            });
+        } catch (e) {
             next(new InternalServerError(e.message));
         }
     }
