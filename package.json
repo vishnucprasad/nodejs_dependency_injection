@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_dependency_injection",
+  "version": "1.0.0",
+  "description": "This app is a simple todo list application that uses dependency injection It consists of a main app file that initializes an Express app and sets up routes for creating and retrieving todos. The app uses a service layer to handle the business logic of creating and retrieving todos, and the service layer is injected with a database layer that handles the storage and retrieval of todo data.",
+  "main": "index.js",
+  "repository": "https://github.com/vishnucprasad/nodejs_dependency_injection",
+  "author": "Vishnu C Prasad",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/.",
+    "dev": "nodemon src/."
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
