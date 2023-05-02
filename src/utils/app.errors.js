@@ -4,6 +4,7 @@ const STATUS_CODES = {
     OK: 200,
     UNAUTHORIZED: 401,
     NOT_FOUND: 404,
+    CONFLICT: 409,
     INTERNAL_SERVER_ERROR: 500,
 };
 
@@ -31,8 +32,32 @@ class NotFoundError extends AppError {
     }
 }
 
+class InternalServerError extends AppError {
+    constructor(
+        description,
+        name = "Internal server error",
+        statusCode = STATUS_CODES.INTERNAL_SERVER_ERROR,
+        isOperational = true
+    ) {
+        super(description, name, statusCode, isOperational);
+    }
+}
+
+class ConflictError extends AppError {
+    constructor(
+        description,
+        name = "Conflict error",
+        statusCode = STATUS_CODES.CONFLICT,
+        isOperational = true
+    ) {
+        super(description, name, statusCode, isOperational);
+    }
+}
+
 module.exports = {
     AppError,
     NotFoundError,
+    InternalServerError,
+    ConflictError,
     STATUS_CODES,
 };
