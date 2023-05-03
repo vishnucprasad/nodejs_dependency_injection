@@ -7,6 +7,7 @@ class TodoController {
         this.service = service;
         this.create = this.create.bind(this);
         this.getTodos = this.getTodos.bind(this);
+        this.getTodo = this.getTodo.bind(this);
     }
     async create(req, res, next) {
         try {
@@ -29,6 +30,17 @@ class TodoController {
 
             res.status(STATUS_CODES.OK).json({
                 todos,
+            });
+        } catch (e) {
+            next(new InternalServerError(e.message));
+        }
+    }
+    async getTodo(req, res, next) {
+        try {
+            const todo = await this.service.getTodo(req.params.id);
+
+            res.status(STATUS_CODES.OK).json({
+                todo,
             });
         } catch (e) {
             next(new InternalServerError(e.message));

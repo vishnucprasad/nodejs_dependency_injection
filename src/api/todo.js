@@ -16,6 +16,11 @@ function todo(app) {
     const todoController = new TodoController(todoService);
 
     app.get("/todo", authMiddleware.isAuthenticated, todoController.getTodos);
+    app.get(
+        "/todo/:id",
+        authMiddleware.isAuthenticated,
+        todoController.getTodo
+    );
     app.post("/todo", authMiddleware.isAuthenticated, todoController.create);
 }
 

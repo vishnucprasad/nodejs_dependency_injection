@@ -17,6 +17,13 @@ class TodoRepository {
             throw e;
         }
     }
+    async getTodoById(id) {
+        try {
+            return await Todo.findById(id);
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoRepository;

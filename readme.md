@@ -255,4 +255,38 @@
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
+## End-point: Get Todo
+
+### Method: GET
+
+> ```
+> http://localhost:3000/todo/6452864a0e169fae6b597cb4
+> ```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMzA1MzksImV4cCI6MTY4MzEzMTEzOX0.ZoZKMCDs2QmePoqmerGE0o_59V2e_277NhHjikld2HI | string |
+
+### Response: 200
+
+```json
+{
+    "todo": {
+        "_id": "6452864a0e169fae6b597cb4",
+        "user": "64514c6e92a981fd805e42f9",
+        "title": "Test title 2",
+        "description": "Test description for Test title 2",
+        "dueDate": 1688312238983,
+        "completed": false,
+        "createdAt": 1683129684474,
+        "updatedAt": 1683129684474,
+        "__v": 0
+    }
+}
+```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
 ---
