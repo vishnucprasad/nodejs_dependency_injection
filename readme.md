@@ -1,5 +1,7 @@
 # Project: Nodejs Dependency Injection
 
+# 📁 Collection: Auth
+
 ## End-point: Register
 
 ### Method: POST
@@ -86,7 +88,7 @@
 
 ```json
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDU3OTYsImV4cCI6MTY4ODI4OTc5Nn0.XMTj5xeWSNYUPDa5zXBe1LCZ-2j5SYskExnjxb53m20"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMjg1OTIsImV4cCI6MTY4ODMxMjU5Mn0.5tgFKNT5kNGnfGDeFUICZyHlUBruGvvQzODplLEBCqk"
 }
 ```
 
@@ -158,5 +160,52 @@
     "status": true
 }
 ```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+# 📁 Collection: Todo
+
+## End-point: Create Todo
+
+### Method: POST
+
+> ```
+> http://localhost:3000/todo
+> ```
+
+### Body (**raw**)
+
+```json
+{
+    "title": "Test title",
+    "description": "Test description for Test title",
+    "dueDate": 1688312238983
+}
+```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMjg2MTQsImV4cCI6MTY4MzEyOTIxNH0.YDtS7kN66RyG4TYNIvitd2iosWa-6WUhCTBWCz1Lw0Q | string |
+
+### Response: 200
+
+```json
+{
+    "todo": {
+        "title": "Test title",
+        "description": "Test description for Test title",
+        "dueDate": 1688312238983,
+        "completed": false,
+        "createdAt": 1683128667573,
+        "updatedAt": 1683128667573,
+        "_id": "6452816fae4c37fab0e6ba61",
+        "__v": 0
+    }
+}
+```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
 ---

@@ -57,7 +57,7 @@ class ConflictError extends AppError {
 class UnauthorizedError extends AppError {
     constructor(
         description,
-        name = "Unauthorized error",
+        name = "Unauthorized",
         statusCode = STATUS_CODES.UNAUTHORIZED,
         isOperational = true
     ) {

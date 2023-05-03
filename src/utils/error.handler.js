@@ -20,6 +20,7 @@ class ServerError {
         this.SIGTERMHandler = this.SIGTERMHandler.bind(this);
     }
     unexpectedErrorHandler(e) {
+        console.log(e);
         logger.error(e);
 
         if (this.server) {

@@ -7,7 +7,7 @@ const {
     unMatchedRoutesHandler,
     errorHandler,
 } = require("./utils/error.handler");
-const { auth } = require("./api");
+const { auth, todo } = require("./api");
 
 async function expressApp(app) {
     // Enable CORS for all routes
@@ -22,6 +22,7 @@ async function expressApp(app) {
 
     // api
     auth(app);
+    todo(app);
 
     // Send not found error for all unmatched routes
     app.all("*", unMatchedRoutesHandler);
