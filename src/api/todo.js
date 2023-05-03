@@ -27,6 +27,11 @@ function todo(app) {
         authMiddleware.isAuthenticated,
         todoController.update
     );
+    app.delete(
+        "/todo/:id",
+        authMiddleware.isAuthenticated,
+        todoController.delete
+    );
 }
 
 module.exports = todo;

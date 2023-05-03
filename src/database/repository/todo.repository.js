@@ -33,6 +33,13 @@ class TodoRepository {
             throw e;
         }
     }
+    async deleteTodoById(id) {
+        try {
+            return await Todo.findByIdAndDelete(id);
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoRepository;

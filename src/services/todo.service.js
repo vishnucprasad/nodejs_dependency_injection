@@ -35,6 +35,13 @@ class TodoService {
             throw e;
         }
     }
+    async delete(todoId) {
+        try {
+            return await this.repository.deleteTodoById(todoId);
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoService;

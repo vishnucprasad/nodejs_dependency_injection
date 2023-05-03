@@ -331,4 +331,38 @@
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
+## End-point: Delete Todo
+
+### Method: DELETE
+
+> ```
+> http://localhost:3000/todo/6452864a0e169fae6b597cb4
+> ```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMzE4NjksImV4cCI6MTY4MzEzMjQ2OX0.rduSY74x8jKjwpwY5baqJO3BO6Yz8f6O-k_x7KYOQoM | string |
+
+### Response: 200
+
+```json
+{
+    "todo": {
+        "_id": "6452864a0e169fae6b597cb4",
+        "user": "64514c6e92a981fd805e42f9",
+        "title": "Test title 2",
+        "description": "Test description for Test title 2",
+        "dueDate": 1688312238983,
+        "completed": true,
+        "createdAt": 1683129684474,
+        "updatedAt": 1683129684474,
+        "__v": 0
+    }
+}
+```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
 ---
