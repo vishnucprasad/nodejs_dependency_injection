@@ -98,4 +98,35 @@
 }
 ```
 
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: Get Auth
+
+### Method: GET
+
+> ```
+> http://localhost:3000/auth
+> ```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDI1NTksImV4cCI6MTY4MzEwMzE1OX0.5f-eMNtPKBEeZCxK0Md6h1p0J4QAqovJdQSwPwtFV-0 | string |
+
+### Response: 200
+
+```json
+{
+    "user": {
+        "_id": "64514c6e92a981fd805e42f9",
+        "email": "test@test.com",
+        "firstName": "Test",
+        "lastName": "Name",
+        "createdAt": 1683049497807,
+        "__v": 0
+    }
+}
+```
+
 ---

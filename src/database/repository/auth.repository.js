@@ -21,6 +21,13 @@ class AuthRepository {
             throw e;
         }
     }
+    async findUserById(userId) {
+        try {
+            return await User.findById(userId);
+        } catch (e) {
+            throw e;
+        }
+    }
     async findUserByEmail(email) {
         try {
             return await User.findOne({ email: email });

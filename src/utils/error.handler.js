@@ -15,6 +15,9 @@ function errorHandler(e, req, res, next) {
 class ServerError {
     constructor(server) {
         this.server = server;
+        this.unexpectedErrorHandler = this.unexpectedErrorHandler.bind(this);
+        this.SIGINTHandler = this.SIGINTHandler.bind(this);
+        this.SIGTERMHandler = this.SIGTERMHandler.bind(this);
     }
     unexpectedErrorHandler(e) {
         logger.error(e);

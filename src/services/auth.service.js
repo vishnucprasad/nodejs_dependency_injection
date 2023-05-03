@@ -5,6 +5,7 @@ const {
     generateRefreshToken,
     refreshAccessToken,
     verifyRefreshToken,
+    verifyAccessToken,
 } = require("../utils");
 const { NotFoundError, UnauthorizedError } = require("../utils/app.errors");
 
@@ -68,6 +69,26 @@ class AuthService {
             const accessToken = await refreshAccessToken(payload);
 
             return accessToken;
+        } catch (e) {
+            throw e;
+        }
+    }
+    async verifyAccessToken(accessToken) {
+        try {
+            const tokenDetails = await verifyAccessToken(accessToken);
+
+            if (!tokenDetails) {
+                return next(new UnauthorizedError());
+            }
+
+            return tokenDetails;
+        } catch (e) {
+            throw e;
+        }
+    }
+    async getAuth(userId) {
+        try {
+            return await this.repository.findUserById(userId);
         } catch (e) {
             throw e;
         }

@@ -6,7 +6,7 @@ const {
     STATUS_CODES,
     ConflictError,
     UnauthorizedError,
-} = require("../utils/app.errors");
+} = require("../../utils/app.errors");
 
 class AuthController {
     constructor(service) {
@@ -14,6 +14,7 @@ class AuthController {
         this.register = this.register.bind(this);
         this.login = this.login.bind(this);
         this.refreshToken = this.refreshToken.bind(this);
+        this.getAuth = this.getAuth.bind(this);
     }
     async register(req, res, next) {
         try {
@@ -65,6 +66,19 @@ class AuthController {
                 return next(new UnauthorizedError());
             }
 
+            next(new InternalServerError(e.message));
+        }
+    }
+    async getAuth(req, res, next) {
+        try {
+            const { _id } = req.decoded;
+
+            const user = await this.service.getAuth(_id);
+
+            res.status(STATUS_CODES.OK).json({
+                user,
+            });
+        } catch (e) {
             next(new InternalServerError(e.message));
         }
     }
