@@ -86,7 +86,7 @@
 
 ```json
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDEwMjgsImV4cCI6MTY4ODI4NTAyOH0.4At4CT-7cg1ifsReZunkd4DkZUnlZ9y70JdBg9LdTQE"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDU3OTYsImV4cCI6MTY4ODI4OTc5Nn0.XMTj5xeWSNYUPDa5zXBe1LCZ-2j5SYskExnjxb53m20"
 }
 ```
 
@@ -126,6 +126,36 @@
         "createdAt": 1683049497807,
         "__v": 0
     }
+}
+```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: Logout
+
+### Method: DELETE
+
+> ```
+> http://localhost:3000/auth/logout
+> ```
+
+### Body (**raw**)
+
+```json
+
+```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDU4MDgsImV4cCI6MTY4MzEwNjQwOH0.oiTPbXMU6hPz4uetjXEyuPTQ4mdAH4ZPBDnO-PEvkh0 | string |
+
+### Response: 200
+
+```json
+{
+    "status": true
 }
 ```
 

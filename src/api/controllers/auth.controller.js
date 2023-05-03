@@ -15,6 +15,7 @@ class AuthController {
         this.login = this.login.bind(this);
         this.refreshToken = this.refreshToken.bind(this);
         this.getAuth = this.getAuth.bind(this);
+        this.logout = this.logout.bind(this);
     }
     async register(req, res, next) {
         try {
@@ -78,6 +79,17 @@ class AuthController {
             res.status(STATUS_CODES.OK).json({
                 user,
             });
+        } catch (e) {
+            next(new InternalServerError(e.message));
+        }
+    }
+    async logout(req, res, next) {
+        try {
+            const { _id } = req.decoded;
+
+            await this.service.logout(_id);
+
+            res.status(STATUS_CODES.OK).json({ status: true });
         } catch (e) {
             next(new InternalServerError(e.message));
         }

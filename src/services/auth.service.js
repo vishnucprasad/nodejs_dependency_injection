@@ -93,6 +93,19 @@ class AuthService {
             throw e;
         }
     }
+    async logout(userId) {
+        try {
+            const refreshToken = await this.repository.findRefreshTokenByUserId(
+                userId
+            );
+
+            if (refreshToken) {
+                await refreshToken.remove();
+            }
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = AuthService;
