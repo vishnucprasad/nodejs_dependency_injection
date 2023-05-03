@@ -28,6 +28,13 @@ class TodoService {
             throw e;
         }
     }
+    async update(todoId, patch) {
+        try {
+            return await this.repository.updateTodo(todoId, patch);
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoService;

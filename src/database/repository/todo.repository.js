@@ -24,6 +24,15 @@ class TodoRepository {
             throw e;
         }
     }
+    async updateTodo(id, patch) {
+        try {
+            return await Todo.findOneAndUpdate({ _id: id }, patch, {
+                new: true,
+            });
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoRepository;

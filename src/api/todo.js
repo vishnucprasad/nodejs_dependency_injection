@@ -22,6 +22,11 @@ function todo(app) {
         todoController.getTodo
     );
     app.post("/todo", authMiddleware.isAuthenticated, todoController.create);
+    app.patch(
+        "/todo/:id",
+        authMiddleware.isAuthenticated,
+        todoController.update
+    );
 }
 
 module.exports = todo;
