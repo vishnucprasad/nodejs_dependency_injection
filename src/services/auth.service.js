@@ -1,6 +1,11 @@
 "use strict";
 
-const { generateAccessToken, generateRefreshToken } = require("../utils");
+const {
+    generateAccessToken,
+    generateRefreshToken,
+    refreshAccessToken,
+    verifyRefreshToken,
+} = require("../utils");
 const { NotFoundError, UnauthorizedError } = require("../utils/app.errors");
 
 class AuthService {
@@ -50,6 +55,19 @@ class AuthService {
             await this.repository.saveRefreshToken(user, refreshToken);
 
             return { accessToken, refreshToken, user };
+        } catch (e) {
+            throw e;
+        }
+    }
+    async refreshToken(refreshToken) {
+        try {
+            const tokenDetails = await verifyRefreshToken(refreshToken);
+
+            const payload = { _id: tokenDetails._id };
+
+            const accessToken = await refreshAccessToken(payload);
+
+            return accessToken;
         } catch (e) {
             throw e;
         }

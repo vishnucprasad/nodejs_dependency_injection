@@ -72,4 +72,30 @@
 }
 ```
 
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: Refresh Acess Token
+
+### Method: POST
+
+> ```
+> http://localhost:3000/auth/refresh
+> ```
+
+### Body (**raw**)
+
+```json
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDEwMjgsImV4cCI6MTY4ODI4NTAyOH0.4At4CT-7cg1ifsReZunkd4DkZUnlZ9y70JdBg9LdTQE"
+}
+```
+
+### Response: 200
+
+```json
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMDEwNjMsImV4cCI6MTY4MzEwMTY2M30.-20e7EusrPVE0nGNSqqdrfDdp3adOvizh6SN4kyzMu8"
+}
+```
+
 ---

@@ -1,9 +1,11 @@
 "use strict";
 
+const { TokenExpiredError } = require("jsonwebtoken");
 const {
     InternalServerError,
     STATUS_CODES,
     ConflictError,
+    UnauthorizedError,
 } = require("../utils/app.errors");
 
 class AuthController {
@@ -11,6 +13,7 @@ class AuthController {
         this.service = service;
         this.register = this.register.bind(this);
         this.login = this.login.bind(this);
+        this.refreshToken = this.refreshToken.bind(this);
     }
     async register(req, res, next) {
         try {
@@ -45,6 +48,23 @@ class AuthController {
                 user,
             });
         } catch (e) {
+            next(new InternalServerError(e.message));
+        }
+    }
+    async refreshToken(req, res, next) {
+        try {
+            const { refreshToken } = req.body;
+
+            const accessToken = await this.service.refreshToken(refreshToken);
+
+            res.status(STATUS_CODES.OK).json({
+                accessToken,
+            });
+        } catch (e) {
+            if (e instanceof UnauthorizedError || TokenExpiredError) {
+                return next(new UnauthorizedError());
+            }
+
             next(new InternalServerError(e.message));
         }
     }

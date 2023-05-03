@@ -11,6 +11,7 @@ function auth(app) {
 
     app.post("/auth/register", authController.register);
     app.post("/auth/login", authController.login);
+    app.post("/auth/refresh", authController.refreshToken);
 }
 
 module.exports = auth;
