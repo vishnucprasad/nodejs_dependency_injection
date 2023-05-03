@@ -10,6 +10,13 @@ class TodoRepository {
             throw e;
         }
     }
+    async getTodosByUserId(userId) {
+        try {
+            return await Todo.find({ user: userId });
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoRepository;

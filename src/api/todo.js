@@ -15,6 +15,7 @@ function todo(app) {
     const todoService = new TodoService(todoRepository);
     const todoController = new TodoController(todoService);
 
+    app.get("/todo", authMiddleware.isAuthenticated, todoController.getTodos);
     app.post("/todo", authMiddleware.isAuthenticated, todoController.create);
 }
 

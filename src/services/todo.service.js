@@ -14,6 +14,13 @@ class TodoService {
             throw e;
         }
     }
+    async getTodos(userId) {
+        try {
+            return await this.repository.getTodosByUserId(userId);
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = TodoService;

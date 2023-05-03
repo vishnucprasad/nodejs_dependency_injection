@@ -187,7 +187,7 @@
 
 | Param | value                                                                                                                                                                        | Type   |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMjg2MTQsImV4cCI6MTY4MzEyOTIxNH0.YDtS7kN66RyG4TYNIvitd2iosWa-6WUhCTBWCz1Lw0Q | string |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMjk4NDcsImV4cCI6MTY4MzEzMDQ0N30.TZXj8CwGMnhGGUgFyU0pQramOnVwenQ5oMhwT3YvALo | string |
 
 ### Response: 200
 
@@ -203,6 +203,53 @@
         "_id": "6452816fae4c37fab0e6ba61",
         "__v": 0
     }
+}
+```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: Get All Todos
+
+### Method: GET
+
+> ```
+> http://localhost:3000/todo
+> ```
+
+### 🔑 Authentication bearer
+
+| Param | value                                                                                                                                                                        | Type   |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| token | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUxNGM2ZTkyYTk4MWZkODA1ZTQyZjkiLCJpYXQiOjE2ODMxMjk4NDcsImV4cCI6MTY4MzEzMDQ0N30.TZXj8CwGMnhGGUgFyU0pQramOnVwenQ5oMhwT3YvALo | string |
+
+### Response: 200
+
+```json
+{
+    "todos": [
+        {
+            "_id": "6452834d22387e698a5507f6",
+            "user": "64514c6e92a981fd805e42f9",
+            "title": "Test title",
+            "description": "Test description for Test title",
+            "dueDate": 1688312238983,
+            "completed": false,
+            "createdAt": 1683129156740,
+            "updatedAt": 1683129156740,
+            "__v": 0
+        },
+        {
+            "_id": "6452864a0e169fae6b597cb4",
+            "user": "64514c6e92a981fd805e42f9",
+            "title": "Test title 2",
+            "description": "Test description for Test title 2",
+            "dueDate": 1688312238983,
+            "completed": false,
+            "createdAt": 1683129684474,
+            "updatedAt": 1683129684474,
+            "__v": 0
+        }
+    ]
 }
 ```
 
